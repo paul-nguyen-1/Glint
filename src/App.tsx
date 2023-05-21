@@ -3,6 +3,7 @@ import './App.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import SimpleSidebar from './components/SimpleSidebar'
 import { useRoutes } from "react-router-dom";
+import SignupCard from './components/SignupCard';
 
 
 
@@ -12,7 +13,7 @@ function App() {
   const routes = useRoutes([
     {
       path: "/",
-      element: 'home',
+      element: <SignupCard />,
     },
 
   ]);
