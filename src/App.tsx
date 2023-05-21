@@ -1,14 +1,30 @@
 import * as React from 'react'
 import './App.css'
 import { ChakraProvider } from '@chakra-ui/react'
-import SimpleSidebar from './assets/components/SimpleSidebar'
+import SimpleSidebar from './components/SimpleSidebar'
+import { useRoutes } from "react-router-dom";
+
+
+
 
 function App() {
+  //routes
+  const routes = useRoutes([
+    {
+      path: "/",
+      element: 'home',
+    },
+
+  ]);
   const children = null
   return (
-    <ChakraProvider>
-      <SimpleSidebar children={children}/>
-    </ChakraProvider>
+    <div>
+      <ChakraProvider>
+        <SimpleSidebar children={children}></SimpleSidebar>
+        {routes}
+      </ChakraProvider>
+    </div>
+
   )
 }
 

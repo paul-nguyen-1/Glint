@@ -21,9 +21,10 @@ import {
     FiStar,
     FiSettings,
     FiMenu,
+    FiUser,
 } from 'react-icons/fi';
 import { IconType } from 'react-icons';
-import { ReactText } from 'react';
+import logo from '/glint-logo.png'
 
 interface LinkItemProps {
     name: string;
@@ -35,6 +36,7 @@ const LinkItems: Array<LinkItemProps> = [
     { name: 'Explore', icon: FiCompass },
     { name: 'Favourites', icon: FiStar },
     { name: 'Settings', icon: FiSettings },
+    { name: 'Profile', icon: FiUser }
 ];
 
 export default function SimpleSidebar({ children }: { children: ReactNode }) {
@@ -82,7 +84,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             {...rest}>
             <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
                 <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-                    Logo
+                    <img src={logo} alt={logo} />
                 </Text>
                 <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
             </Flex>
@@ -97,11 +99,11 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 
 interface NavItemProps extends FlexProps {
     icon: IconType;
-    children: ReactText;
+    children: string;
 }
 const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
     return (
-        <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+        <Link href={children} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
             <Flex
                 align="center"
                 p="4"
@@ -153,7 +155,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             />
 
             <Text fontSize="2xl" ml="8" fontFamily="monospace" fontWeight="bold">
-                Logo
+                <img src={logo} alt={logo} style={{ height: "100px" }} />
             </Text>
         </Flex>
     );
