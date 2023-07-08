@@ -97,7 +97,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
                     {link.name}
                 </NavItem>
             ))}
-            <Flex justifyContent="center" mt="200px">
+            <Flex justifyContent="center" mt="180px">
                 <Button colorScheme='messenger' variant='solid' width="100px">
                     Login
                 </Button>

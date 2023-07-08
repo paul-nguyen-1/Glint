@@ -1,5 +1,5 @@
 import * as React from 'react'
-import './App.css'
+import './App.scss'
 import { ChakraProvider } from '@chakra-ui/react'
 import SimpleSidebar from './components/SimpleSidebar'
 import { useRoutes } from "react-router-dom";

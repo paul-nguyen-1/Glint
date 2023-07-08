@@ -11,7 +11,8 @@ export default function ColorModeToggle(props: ButtonProps) {
                 _focus={{ boxShadow: 'none' }}
                 w="fit-content"
                 colorScheme="transparent"
-                color={colorMode === 'light' ? "black" : "white"}
+                _hover={{bg: colorMode === 'light' ? "lightgray" : "gray"}}
+                color={colorMode === 'light' ? "gray" : "white"}
                 {...props}>
                 {colorMode === 'light' ? <BsMoonStarsFill /> : <BsSun />}
             </Button>
